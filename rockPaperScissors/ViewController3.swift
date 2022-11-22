@@ -17,6 +17,7 @@ class ViewController3: UIViewController {
     @IBOutlet weak var compImageOutlet: UIImageView!
     
     @IBOutlet weak var name3Outlet: UILabel!
+    
     @IBOutlet weak var name2Outlet: UILabel!
     @IBOutlet weak var name1Outlet: UILabel!
     
@@ -84,7 +85,7 @@ class ViewController3: UIViewController {
     @IBAction func move2Action(_ sender: Any) {
         
             move1Outlet.isHidden = true
-            move2Outlet.isHidden = true
+            move3Outlet.isHidden = true
             play(p: .b)
     }
     
