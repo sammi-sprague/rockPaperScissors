@@ -101,11 +101,23 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.67185394480000005" green="0.96611279250000004" blue="0.95950523870000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eme-fS-sFq"/>
+                    <navigationItem key="navigationItem" id="eme-fS-sFq">
+                        <barButtonItem key="leftBarButtonItem" title="Delete" id="wsY-nv-ly8">
+                            <connections>
+                                <action selector="deleteAction:" destination="BYZ-38-t0r" id="kFL-23-DQY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="GN7-44-jJs">
+                            <connections>
+                                <action selector="saveAction:" destination="BYZ-38-t0r" id="XGH-N7-4q6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="compWLT" destination="qeu-La-XHk" id="8K7-IA-Ysh"/>
                         <outlet property="computerImageOutlet" destination="Dsc-bJ-Rew" id="Xeo-K8-CFn"/>
                         <outlet property="paperOutlet" destination="zYd-ah-rOA" id="VoK-Az-6ZO"/>
+                        <outlet property="playOutlet" destination="5v7-am-LAL" id="DHU-0p-CIR"/>
                         <outlet property="playerWLT" destination="HHC-bL-TOJ" id="gOG-MT-tnd"/>
                         <outlet property="rockOutlet" destination="ACT-NL-d51" id="7rW-p0-MQH"/>
                         <outlet property="scissorOutlet" destination="JTP-bK-8Tu" id="y8a-uk-pLN"/>

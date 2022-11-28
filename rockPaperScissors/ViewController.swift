@@ -8,12 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let defaults = UserDefaults.standard
 
     
+    @IBOutlet weak var playOutlet: UIButton!
     @IBOutlet weak var rockOutlet: UIImageView!
     @IBOutlet weak var scissorOutlet: UIImageView!
     @IBOutlet weak var paperOutlet: UIImageView!
     @IBOutlet weak var computerImageOutlet: UIImageView!
+    
     
     @IBOutlet weak var compWLT: UILabel!
     @IBOutlet weak var playerWLT: UILabel!
@@ -32,6 +36,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        playOutlet.isHidden = true
+        
+        if let ok = defaults.object(forKey: "wins"){
+            pWin = ok as! Int
+        }
+        if let ok = defaults.object(forKey: "loss"){
+            pLoss = ok as! Int
+        }
+        if let ok = defaults.object(forKey: "ties"){
+            pTie = ok as! Int
+        }
+        playerWLT.text = "W: \(pWin)   L: \(pLoss)   T: \(pTie)"
     }
 
     
@@ -42,6 +58,8 @@ class ViewController: UIViewController {
         paperOutlet.isHidden = false
         scissorOutlet.isHidden = false
         computerImageOutlet.isHidden = true
+        winOutlet.text = ""
+        sender.isHidden = true
     }
     
    
@@ -69,7 +87,7 @@ class ViewController: UIViewController {
     func play(p: Move){
         computerImageOutlet.isHidden = false
         winOutlet.text = ""
-        var rando = Int.random(in: 1..<4)
+        let rando = Int.random(in: 1..<4)
         switch rando {
         case 1:
             self.computer = .rock
@@ -95,11 +113,26 @@ class ViewController: UIViewController {
         }
         
         playerWLT.text = "W: \(pWin)   L: \(pLoss)   T: \(pTie)"
-        compWLT.text = "W: \(pLoss)   L: \(pWin)   T: \(pTie)"
-        
+        //compWLT.text = "W: \(pLoss)   L: \(pWin)   T: \(pTie)"
+        playOutlet.isHidden = false
         
     }
     
+    
+    
+    @IBAction func saveAction(_ sender: Any) {
+        defaults.set(pWin, forKey: "wins")
+        defaults.set(pTie, forKey: "loss")
+        defaults.set(pLoss, forKey: "ties")
+    }
+    
+    
+    @IBAction func deleteAction(_ sender: Any) {
+        pTie = 0
+        pWin = 0
+        pLoss = 0
+        playerWLT.text = "W: \(pWin)   L: \(pLoss)   T: \(pTie)"
+    }
     
 }
 
