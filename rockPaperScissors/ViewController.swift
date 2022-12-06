@@ -4,6 +4,31 @@
 //
 //  Created by SAMANTHA SPRAGUE on 11/11/22.
 //
+/*
+ Programming Concepts
+    variables and constants
+    operations
+    if/else
+    switch statement
+    functions
+    classes
+    enums
+    safely unwrapping
+    inheritence
+    persistence
+    github
+ 
+ UIElements
+    lable
+    button
+    textfield
+    textview
+    imageview
+    navigation controller
+    view controller
+    gesture recognizer
+ 
+ */
 
 import UIKit
 
